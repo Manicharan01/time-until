@@ -48,5 +48,7 @@ pub fn main() !void {
 
     const minutes = @divTrunc(total_seconds, seconds_in_minute);
 
-    std.debug.print("Until target date: {} days {} hours {} minutes\n", .{ days, hours, minutes });
+    const seconds = @rem(total_seconds, seconds_in_minute);
+
+    std.debug.print("Until target date: {} days {} hours {} minutes {} seconds\n", .{ days, hours, minutes, seconds });
 }
